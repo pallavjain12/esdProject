@@ -1,5 +1,6 @@
 package com.mt2022067.erp.bean;
-
+import java.util.Set;
+import java.util.HashSet;
 import jakarta.persistence.*;
 
 @Entity
@@ -7,7 +8,7 @@ import jakarta.persistence.*;
 public class Specialization {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Integer id;
 
     @Column(unique = true, nullable = false)
@@ -23,4 +24,12 @@ public class Specialization {
 
     @Column(name = "credits_required", nullable = false)
     private Integer creditsRequired;
+
+    @ManyToMany(cascade = { CascadeType.ALL })
+    @JoinTable(
+            name = "specialization_course",
+            joinColumns = { @JoinColumn(name = "course_id") },
+            inverseJoinColumns = { @JoinColumn(name = "project_id") }
+    )
+    private Set<Specialization> specializations = new HashSet<>();
 }
