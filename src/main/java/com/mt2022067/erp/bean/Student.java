@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class Student {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     private Integer id;
 
     @Column(name="roll_number", unique = true, nullable = false)
@@ -22,10 +22,10 @@ public class Student {
     @Column(unique = true, nullable = false)
     private String email;
 
-    @Column(name="photograph_graph")
+    @Column(name="photographgraph_path")
     private String photographPath;
 
-    @Column(nullable = false, columnDefinition = "0")
+    @Column(nullable = false, columnDefinition = "integer default 0")
     private Integer cgpa;
 
     @Column(name = "total_credits",nullable = false)
@@ -33,4 +33,7 @@ public class Student {
 
     @Column(name = "graduation_year")
     private Integer graduationYear;
+
+    @OneToOne(targetEntity = Specialization.class, cascade = CascadeType.ALL)
+    private Specialization specialization;
 }

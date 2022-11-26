@@ -1,6 +1,8 @@
 package com.mt2022067.erp.bean;
 
 import jakarta.persistence.*;
+import java.util.Set;
+import java.util.HashSet;
 
 @Entity
 @Table(name="Employee")
@@ -22,4 +24,5 @@ public class Employee {
     private String title;
 
     private String photographPath;
+
 }

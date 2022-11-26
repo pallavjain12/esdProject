@@ -1,5 +1,6 @@
 package com.mt2022067.erp.bean;
 
+import com.mt2022067.erp.bean.Employee;
 import jakarta.persistence.*;
 
 @Entity
@@ -7,7 +8,7 @@ import jakarta.persistence.*;
 public class Course {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue
     private Integer id;
 
     @Column(name = "course_code", unique = true, nullable = false)
@@ -29,4 +30,8 @@ public class Course {
 
     @Column(nullable = false)
     private Integer capacity;
+
+    @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "faculty")
+    private Employee employee;
 }
