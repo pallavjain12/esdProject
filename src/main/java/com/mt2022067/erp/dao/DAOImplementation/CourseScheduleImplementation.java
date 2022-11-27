@@ -13,7 +13,7 @@ import java.util.List;
 import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
 
 public class CourseScheduleImplementation {
-    public List<CourseSchedule> getCourseSchedule(List<Course> coursesList) {
+    public List<List<CourseSchedule>> getCourseSchedule(List<Course> coursesList) {
         EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
@@ -21,13 +21,13 @@ public class CourseScheduleImplementation {
         CriteriaQuery<CourseSchedule> criteria = builder.createQuery(CourseSchedule.class);
         Root<CourseSchedule> root = criteria.from(CourseSchedule.class);
         criteria.select(root);
-        List<CourseSchedule> courseScheduleList = new ArrayList<>();
+        List<List<CourseSchedule>> courseScheduleList = new ArrayList<>();
 
         for (Course course : coursesList) {
             criteria.where(builder.equal(root.get("course"), course));
             List<CourseSchedule> temp = entityManager.createQuery(criteria).getResultList();
             if (temp != null) {
-                courseScheduleList.addAll((temp));
+                courseScheduleList.add((temp));
             }
         }
         entityManager.close();

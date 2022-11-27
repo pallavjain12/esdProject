@@ -12,11 +12,11 @@
 <!--         DB schema will be updated if needed-->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="show_sql">true</property>
-        <mapping class="com.mt2022067.erp.bean.Course" />
-        <mapping class="com.mt2022067.erp.bean.CourseSchedule" />
-        <mapping class="com.mt2022067.erp.bean.Employee" />
-        <mapping class="com.mt2022067.erp.bean.Student" />
-        <mapping class="com.mt2022067.erp.bean.StudentCourse" />
-        <mapping class="com.mt2022067.erp.bean.Specialization" />
+<!--        <mapping class="com.mt2022067.erp.bean.Course" />-->
+<!--        <mapping class="com.mt2022067.erp.bean.CourseSchedule" />-->
+<!--        <mapping class="com.mt2022067.erp.bean.Employee" />-->
+<!--        <mapping class="com.mt2022067.erp.bean.Student" />-->
+<!--        <mapping class="com.mt2022067.erp.bean.StudentCourse" />-->
+<!--        <mapping class="com.mt2022067.erp.bean.Specialization" />-->
     </session-factory>
 </hibernate-configuration>

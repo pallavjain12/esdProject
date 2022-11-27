@@ -1,12 +1,21 @@
 package com.mt2022067.erp;
 
+import jakarta.persistence.EntityManager;
+
+import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
+
 public class run {
     public static void main(String[] args) {
+
+        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+
+        entityManager.close();
 
 //        SessionFactory one = HibernateUtil.getSessionFactory();
 //        Session session = one.openSession();
 //        session.beginTransaction();
-
+//
 //        Employee employee = new Employee();
 //        employee.setFirstName("run2 first naem");
 //        employee.setEmail("ru1sn@gmial.com");
@@ -26,7 +35,7 @@ public class run {
 //        session.persist(course1);
 //        session.getTransaction().commit();
 //        System.out.println("saved successfully");
-
+//
 //        List<Employee> emp = new EmployeeDAOImplementation().checkEmployeeCredentials("ru1sn@gmial.com");
 //        System.out.println(emp.getEmail());
 //        System.out.println(emp.getEmail());

@@ -9,20 +9,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b91a07e2-f5fa-42fb-aa66-e61e67651cc5" name="Changes" comment="Added dao implementation for CourseSchedule.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/CourseController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/EmployeeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/util/EntityManagerUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/erp_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/erp_war_exploded.xml" afterDir="false" />
+    <list default="true" id="b91a07e2-f5fa-42fb-aa66-e61e67651cc5" name="Changes" comment="Working&#10;- api is responding&#10;&#10;Not working&#10;- Employee cannot cast to EMployee.&#10;&gt; not in loader problem.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/EmployeeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseScheduleImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseScheduleImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/EmployeeDAOImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/EmployeeDAOImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/EmployeeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/EmployeeDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/util/HibernateUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -270,7 +266,7 @@
       <workItem from="1669454950343" duration="16707000" />
       <workItem from="1669528337759" duration="14219000" />
       <workItem from="1669554040716" duration="2157000" />
-      <workItem from="1669556304021" duration="6522000" />
+      <workItem from="1669556304021" duration="14298000" />
     </task>
     <task id="LOCAL-00001" summary="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns.">
       <created>1669459158597</created>
@@ -286,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669544637805</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Working&#10;- api is responding&#10;&#10;Not working&#10;- Employee cannot cast to EMployee.&#10;&gt; not in loader problem.">
+      <created>1669567028594</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669567028594</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +310,8 @@
     <option name="RELOAD_CONTEXT" value="false" />
     <MESSAGE value="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns." />
     <MESSAGE value="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;" />
+    <MESSAGE value="Working&#10;- api is responding&#10;&#10;Not working&#10;- Employee cannot cast to EMployee.&#10;&gt; not in loader problem." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working&#10;- api is responding&#10;&#10;Not working&#10;- Employee cannot cast to EMployee.&#10;&gt; not in loader problem." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
