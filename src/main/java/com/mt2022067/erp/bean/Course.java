@@ -1,6 +1,5 @@
 package com.mt2022067.erp.bean;
 
-import com.mt2022067.erp.bean.Employee;
 import jakarta.persistence.*;
 
 @Entity
@@ -8,7 +7,7 @@ import jakarta.persistence.*;
 public class Course {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(name = "course_code", unique = true, nullable = false)
@@ -32,6 +31,74 @@ public class Course {
     private Integer capacity;
 
     @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "faculty")
+    @JoinColumn(name = "employeeId")
     private Employee employee;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public Integer getTerm() {
+        return term;
+    }
+
+    public void setTerm(Integer term) {
+        this.term = term;
+    }
+
+    public Integer getCredit() {
+        return credit;
+    }
+
+    public void setCredit(Integer credit) {
+        this.credit = credit;
+    }
+
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
 }

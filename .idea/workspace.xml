@@ -9,29 +9,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b91a07e2-f5fa-42fb-aa66-e61e67651cc5" name="Changes" comment="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/util/HibernateSessionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/erp_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/erp_war_exploded.xml" afterDir="false" />
+    <list default="true" id="b91a07e2-f5fa-42fb-aa66-e61e67651cc5" name="Changes" comment="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/EmployeeDAOImplementation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/EmployeeDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/StudentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/util/HibernateUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Course.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Employee.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Specialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Specialization.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Student.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/StudentCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/StudentCourse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/util/HibernateSessionUtil.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -74,6 +84,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   },
   "keyToStringList": {
@@ -82,7 +93,20 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.run">
+    <configuration name="run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.mt2022067.erp.run" />
+      <module name="erp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.mt2022067.erp.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GlassFish 6.2.51" type="GlassfishConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="GlassFish 6.2.51" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/erp-1.0-SNAPSHOT" />
       <deployment>
@@ -162,6 +186,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.run" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.generated-requests | #3" />
       </list>
@@ -176,6 +201,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669454949133</updated>
       <workItem from="1669454950343" duration="16707000" />
+      <workItem from="1669528337759" duration="13022000" />
     </task>
     <task id="LOCAL-00001" summary="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns.">
       <created>1669459158597</created>
@@ -202,7 +228,19 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="RELOAD_CONTEXT" value="false" />
     <MESSAGE value="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns." />
-    <option name="LAST_COMMIT_MESSAGE" value="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns." />
+    <MESSAGE value="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="jakarta.persistence.PersistenceException" package="jakarta.persistence" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
