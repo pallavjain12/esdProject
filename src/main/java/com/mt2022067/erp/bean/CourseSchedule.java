@@ -9,6 +9,7 @@ import java.sql.Time;
 public class CourseSchedule {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @OneToOne(targetEntity = Course.class, cascade = CascadeType.ALL)

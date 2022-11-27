@@ -1,14 +1,16 @@
 package com.mt2022067.erp.bean;
-import java.util.Set;
-import java.util.HashSet;
+
 import jakarta.persistence.*;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "specialization")
 public class Specialization {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(unique = true, nullable = false)
