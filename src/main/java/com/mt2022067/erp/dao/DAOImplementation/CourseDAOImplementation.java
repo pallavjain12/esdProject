@@ -1,9 +1,6 @@
 package com.mt2022067.erp.dao.DAOImplementation;
 
-import com.mt2022067.erp.bean.Course;
-import com.mt2022067.erp.bean.Employee;
-import com.mt2022067.erp.bean.Student;
-import com.mt2022067.erp.bean.StudentCourse;
+import com.mt2022067.erp.bean.*;
 import com.mt2022067.erp.dao.CourseDAO;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;

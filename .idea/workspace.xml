@@ -10,24 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b91a07e2-f5fa-42fb-aa66-e61e67651cc5" name="Changes" comment="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/EmployeeDAOImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/EmployeeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/StudentDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/util/HibernateUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseScheduleImplementation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Course.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Specialization.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Specialization.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/StudentCourse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/StudentCourse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/util/HibernateSessionUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +26,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -201,7 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1669454949133</updated>
       <workItem from="1669454950343" duration="16707000" />
-      <workItem from="1669528337759" duration="13022000" />
+      <workItem from="1669528337759" duration="14219000" />
     </task>
     <task id="LOCAL-00001" summary="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns.">
       <created>1669459158597</created>
@@ -210,7 +196,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669459158597</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;">
+      <created>1669544637805</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669544637805</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

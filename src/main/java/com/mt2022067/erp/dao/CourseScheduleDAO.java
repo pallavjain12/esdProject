@@ -6,5 +6,5 @@ import com.mt2022067.erp.bean.Course;
 import java.util.*;
 
 public interface CourseScheduleDAO {
-    List<CourseSchedule> getScheduleByCourseId(Course course);
+    List<CourseSchedule> getCourseSchedule(List<Course> coursesList);
 }
