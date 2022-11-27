@@ -1,10 +1,11 @@
 package com.mt2022067.erp.dao.DAOImplementation;
 
-import com.mt2022067.erp.bean.*;
+import com.mt2022067.erp.bean.Course;
+import com.mt2022067.erp.bean.Employee;
+import com.mt2022067.erp.bean.Student;
+import com.mt2022067.erp.bean.StudentCourse;
 import com.mt2022067.erp.dao.CourseDAO;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -12,10 +13,13 @@ import jakarta.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
+
 public class CourseDAOImplementation implements CourseDAO {
     public List<Course> getCourseByEmployeeId(Employee employee) {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        System.out.println(employee.getId());
+        System.out.println(employee.getFirstName());
+        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
         CriteriaQuery<Course> criteria = builder.createQuery(Course.class);
@@ -24,12 +28,13 @@ public class CourseDAOImplementation implements CourseDAO {
         criteria.where(builder.equal(root.get("employee"), employee));
         List<Course> courseList = entityManager.createQuery(criteria).getResultList();
         entityManager.getTransaction().commit();
+        entityManager.close();
+        System.out.println("closing in getCOurseByEmployeeID");
         return courseList;
     }
     public List<Student> studentsListByCourseId(Course course) {
 
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
@@ -43,6 +48,7 @@ public class CourseDAOImplementation implements CourseDAO {
         for (StudentCourse studentCourse : list) {
             studentList.add(studentCourse.getStudent());
         }
+        entityManager.close();
         return studentList;
     }
 }

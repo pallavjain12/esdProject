@@ -3,8 +3,6 @@ package com.mt2022067.erp.dao.DAOImplementation;
 import com.mt2022067.erp.bean.Course;
 import com.mt2022067.erp.bean.CourseSchedule;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -12,10 +10,11 @@ import jakarta.persistence.criteria.Root;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
+
 public class CourseScheduleImplementation {
     public List<CourseSchedule> getCourseSchedule(List<Course> coursesList) {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
@@ -31,6 +30,7 @@ public class CourseScheduleImplementation {
                 courseScheduleList.addAll((temp));
             }
         }
+        entityManager.close();
         return courseScheduleList;
     }
 }

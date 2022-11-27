@@ -2,18 +2,19 @@ package com.mt2022067.erp.dao.DAOImplementation;
 
 import com.mt2022067.erp.bean.Employee;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
 import java.util.List;
 
+import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
+
 public class EmployeeDAOImplementation {
-    public Employee checkEmployeeCredentials(String email) {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("persistence");
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+    public List<Employee> checkEmployeeCredentials(String email) {
+        System.out.println("came in dao");
+        System.out.println(email);
+        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
 
@@ -22,7 +23,9 @@ public class EmployeeDAOImplementation {
         criteria.select(root);
         criteria.where(builder.equal(root.get("email"), email));
         List<Employee> courseList = entityManager.createQuery(criteria).getResultList();
+        System.out.println(courseList.size());
         entityManager.getTransaction().commit();
-        return courseList.get(0);
+        entityManager.close();
+        return courseList;
     }
 }
