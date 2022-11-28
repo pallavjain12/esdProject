@@ -54,7 +54,7 @@ public class CourseSchedule {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @OneToOne(targetEntity = Course.class, cascade = CascadeType.ALL)
+    @OneToOne(targetEntity = Course.class, cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Course course;
 
     @Column(nullable = false)

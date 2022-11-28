@@ -11,8 +11,6 @@ import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
 
 public class EmployeeDAOImplementation {
     public Employee checkEmployeeCredentials(String email) {
-        System.out.println("came in dao");
-        System.out.println(email);
         EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
@@ -24,11 +22,6 @@ public class EmployeeDAOImplementation {
         TypedQuery<Employee> query = entityManager.createQuery(
                 "SELECT e FROM Employee e WHERE e.email = ?1", Employee.class);
         Object employee = query.setParameter(1, email).getSingleResult();
-        System.out.println(employee);
-//        Employee courseList = entityManager.createQuery(criteria).getSingleResult();
-//        System.out.println(courseList.getId());
-//        entityManager.getTransaction().commit();
-//        entityManager.close();
         return (Employee) employee;
     }
 }

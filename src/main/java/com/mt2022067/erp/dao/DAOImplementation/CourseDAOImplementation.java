@@ -6,6 +6,7 @@ import com.mt2022067.erp.bean.Student;
 import com.mt2022067.erp.bean.StudentCourse;
 import com.mt2022067.erp.dao.CourseDAO;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.TypedQuery;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
@@ -17,8 +18,6 @@ import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
 
 public class CourseDAOImplementation implements CourseDAO {
     public List<Course> getCourseByEmployeeId(Employee employee) {
-        System.out.println(employee.getId());
-        System.out.println(employee.getFirstName());
         EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
@@ -50,5 +49,16 @@ public class CourseDAOImplementation implements CourseDAO {
         }
         entityManager.close();
         return studentList;
+    }
+
+    public Course getCourseByCourseId(int courseId) {
+        EntityManager entityManager = getEntityManagerFactory().createEntityManager();
+        entityManager.getTransaction().begin();
+        CriteriaBuilder builder = entityManager.getCriteriaBuilder();
+
+        TypedQuery<Course> query = entityManager.createQuery(
+                "SELECT e FROM Course e WHERE e.id = ?1", Course.class);
+        Object course = query.setParameter(1, courseId).getSingleResult();
+        return (Course)course;
     }
 }
