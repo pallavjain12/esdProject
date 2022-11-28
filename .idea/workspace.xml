@@ -9,11 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b91a07e2-f5fa-42fb-aa66-e61e67651cc5" name="Changes" comment="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseScheduleImplementation.java" afterDir="false" />
+    <list default="true" id="b91a07e2-f5fa-42fb-aa66-e61e67651cc5" name="Changes" comment="added CORS Filter">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/helper/CourseScheduleHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/helper/StudentHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/CourseScheduleDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/bean/CourseSchedule.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/CourseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/CourseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/EmployeeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/controller/EmployeeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/CourseDAOImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/EmployeeDAOImplementation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/dao/DAOImplementation/EmployeeDAOImplementation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/mt2022067/erp/run.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +51,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -66,20 +72,32 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/albus/IdeaProject/erp/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings"
   },
   "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ],
     "com.intellij.ide.scratch.ScratchImplUtil$2/Change Language": [
       "HTML"
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Application.run">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="GlassFish Server.GlassFish 6.2.51">
     <configuration name="run" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.mt2022067.erp.run" />
       <module name="erp" />
@@ -164,14 +182,84 @@
         </option>
       </method>
     </configuration>
+    <configuration default="true" type="GlassfishConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN" value="" />
+        <option name="PRESERVE" value="false" />
+        <option name="COMPATIBILITY" value="false" />
+        <option name="VIRTUAL_SERVER" />
+        <option name="USERNAME" value="admin" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="GlassFish" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="9009" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="generated-requests | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="2" requestIdentifier="#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="generated-requests_2 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests_2.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests_3 | #1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests_3.http" requestIdentifier="#1" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests_3 | #1" />
+        <item itemvalue="HTTP Request.generated-requests_2 | #1" />
         <item itemvalue="Application.run" />
         <item itemvalue="HTTP Request.generated-requests | #2" />
         <item itemvalue="HTTP Request.generated-requests | #3" />
@@ -188,6 +276,10 @@
       <updated>1669454949133</updated>
       <workItem from="1669454950343" duration="16707000" />
       <workItem from="1669528337759" duration="14219000" />
+      <workItem from="1669554040716" duration="2157000" />
+      <workItem from="1669556304021" duration="16823000" />
+      <workItem from="1669624783086" duration="2352000" />
+      <workItem from="1669635564951" duration="20682000" />
     </task>
     <task id="LOCAL-00001" summary="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns.">
       <created>1669459158597</created>
@@ -203,7 +295,28 @@
       <option name="project" value="LOCAL" />
       <updated>1669544637805</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Working&#10;- api is responding&#10;&#10;Not working&#10;- Employee cannot cast to EMployee.&#10;&gt; not in loader problem.">
+      <created>1669567028594</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669567028594</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Working&#10;- getting schedule&#10;- veryfing employee&#10;- fetching student list">
+      <created>1669574677309</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669574677309</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added CORS Filter">
+      <created>1669650340421</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669650340421</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -224,7 +337,10 @@
     <option name="RELOAD_CONTEXT" value="false" />
     <MESSAGE value="Intial Commit&#10;GlassFish working&#10;Implemented bean class columns." />
     <MESSAGE value="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented DAO.&#10;Checked DAO for &#10;- fetching all students based on course;&#10;- fetching all courses taught by a faculty;&#10;- checking employee credentials;&#10;Remained to implement are&#10;- fetch schedule of courses;" />
+    <MESSAGE value="Working&#10;- api is responding&#10;&#10;Not working&#10;- Employee cannot cast to EMployee.&#10;&gt; not in loader problem." />
+    <MESSAGE value="Working&#10;- getting schedule&#10;- veryfing employee&#10;- fetching student list" />
+    <MESSAGE value="added CORS Filter" />
+    <option name="LAST_COMMIT_MESSAGE" value="added CORS Filter" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -235,5 +351,12 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/erp$GlassFish_6_2_51.ic" NAME="GlassFish 6.2.51 Coverage Results" MODIFIED="1669553430907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
