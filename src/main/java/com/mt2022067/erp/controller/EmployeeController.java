@@ -33,7 +33,6 @@ public class EmployeeController {
     @Path("/getCourseSchedulefor/{email}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response getCourseScheduleByEmployeeId(@PathParam("email") String email) {
-        // System.out.println(employee.getEmail());
         Employee employee1 = new EmployeeDAOImplementation().checkEmployeeCredentials(email);
         List<Course> courseList = new CourseDAOImplementation().getCourseByEmployeeId(employee1);
         List<List<CourseSchedule>> courseScheduleList = new CourseScheduleImplementation().getCourseSchedule(courseList);
