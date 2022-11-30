@@ -7,13 +7,12 @@ import jakarta.persistence.criteria.CriteriaBuilder;
 import jakarta.persistence.criteria.CriteriaQuery;
 import jakarta.persistence.criteria.Root;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import static com.mt2022067.erp.util.EntityManagerUtil.getEntityManagerFactory;
 
 public class CourseScheduleImplementation {
-    public List<List<CourseSchedule>> getCourseSchedule(List<Course> coursesList) {
+    public List<CourseSchedule> getCourseSchedule(Course course) {
         EntityManager entityManager = getEntityManagerFactory().createEntityManager();
         entityManager.getTransaction().begin();
         CriteriaBuilder builder = entityManager.getCriteriaBuilder();
@@ -21,16 +20,18 @@ public class CourseScheduleImplementation {
         CriteriaQuery<CourseSchedule> criteria = builder.createQuery(CourseSchedule.class);
         Root<CourseSchedule> root = criteria.from(CourseSchedule.class);
         criteria.select(root);
-        List<List<CourseSchedule>> courseScheduleList = new ArrayList<>();
 
-        for (Course course : coursesList) {
-            criteria.where(builder.equal(root.get("course"), course));
-            List<CourseSchedule> temp = entityManager.createQuery(criteria).getResultList();
-            if (temp != null) {
-                courseScheduleList.add((temp));
-            }
+        criteria.where(builder.equal(root.get("course"), course));
+        List<CourseSchedule> courseScheduleList;
+        try {
+            courseScheduleList = entityManager.createQuery(criteria).getResultList();
+        }
+        catch (Exception e) {
+            System.out.println("No course schedules for course " + course.getName());
+            courseScheduleList = null;
         }
         entityManager.close();
+        entityManager.getTransaction().commit();
         return courseScheduleList;
     }
 }

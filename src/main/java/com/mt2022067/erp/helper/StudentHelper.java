@@ -11,9 +11,7 @@ import java.util.List;
 public class StudentHelper {
     public Object getStudentsListByCourseId(Integer courseId) {
         CourseDAOImplementation courseDAOImplementation = new CourseDAOImplementation();
-        System.out.println("Paramenter Course ID is : " + courseId);
         Course course = courseDAOImplementation.getCourseByCourseId(courseId);
-        System.out.println("Database courseId is : " + course.getId());
         List<Student> studentList = courseDAOImplementation.studentsListByCourseId(course);
         return arrangeStudentData(studentList);
     }

@@ -9,6 +9,6 @@ public class HelloResource {
     @GET
     @Produces("text/plain")
     public String hello() {
-        return "Hello, Pallav Start implementing esd project bakend work!";
+        return "Hello, Pallav!";
     }
 }

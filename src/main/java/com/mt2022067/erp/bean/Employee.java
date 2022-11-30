@@ -65,6 +65,15 @@ public class Employee {
 
     private String title;
 
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
+    }
+
     private String photographPath;
 
+    private String Password;
 }

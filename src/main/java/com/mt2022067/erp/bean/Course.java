@@ -2,6 +2,9 @@ package com.mt2022067.erp.bean;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name="course")
 public class Course {
@@ -30,9 +33,20 @@ public class Course {
     @Column(nullable = false)
     private Integer capacity;
 
+    public Set<Specialization> getSpecializationSet() {
+        return specializationSet;
+    }
+
+    public void setSpecializationSet(Set<Specialization> specializationSet) {
+        this.specializationSet = specializationSet;
+    }
+
     @OneToOne(targetEntity = Employee.class, cascade = CascadeType.ALL)
     @JoinColumn(name = "employeeId")
     private Employee employee;
+
+    @ManyToMany(mappedBy = "courses")
+    Set<Specialization> specializationSet = new HashSet<>();
 
     public Integer getId() {
         return id;

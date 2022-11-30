@@ -8,4 +8,6 @@ import java.util.List;
 public interface CourseDAO {
     List<Course>  getCourseByEmployeeId(Employee employee);
     List<Student> studentsListByCourseId(Course course);
+
+    Course getCourseByCourseId(Integer courseId);
 }
